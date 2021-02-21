@@ -1,10 +1,7 @@
-*
+.*
 
 !.gitignore
 !.profile
 !.bashrc
 !.xinitrc
 !.xprofile
-!heaven/
-!hell/
-!purgatory/
