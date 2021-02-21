@@ -1,0 +1,8 @@
+upower
+light
+pamixer
+rtorrent
+nix search
+nixos-rebuild switch
+slock
+redshift

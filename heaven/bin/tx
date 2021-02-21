@@ -1,0 +1,7 @@
+pdflatex $1.tex
+rm $1.aux $1.log
+mupdf $1.pdf
+if [ "$2" == "" ]
+then
+rm $1.pdf
+fi

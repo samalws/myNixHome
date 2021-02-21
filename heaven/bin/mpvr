@@ -1,0 +1,3 @@
+ls -r > playlist
+mpv --playlist=playlist "$@"
+rm playlist
