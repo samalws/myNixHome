@@ -1,23 +1,11 @@
 # text of /etc/nixos/configuration.nix is: "import /home/uwe/purgatory/configuration.nix"
 
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 let
- mySt  = import ./mySt/st.nix;
- myDwm = import ./myDwm/dwm.nix;
+ mySt  = import ./myStNix/st.nix;
+ myDwm = import ./myDwmNix/dwm.nix;
+ hardware = import ./nonAutoHardwareConfig.nix;
 in {
-  imports = [
-    /etc/nixos/hardware-configuration.nix
-  ];
-
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
-    cleanTmpDir = true;
-    supportedFilesystems = [ "ntfs" ];
-  };
-
   networking = {
     hostName = "nixos-uwe";
     networkmanager.enable = true;
@@ -42,12 +30,6 @@ in {
   sound.enable = true;
   hardware.pulseaudio.enable = true;
   hardware.pulseaudio.support32Bit = true;
-
-  fileSystems."/mnt/win" = {
-    device = "/dev/nvme0n1p3";
-    fsType = "ntfs";
-    options = [ "rw" "uid=uwe" ];
-  };
 
   users.users.uwe = {
     isNormalUser = true;
@@ -101,4 +83,4 @@ in {
   ];
 
   system.stateVersion = "20.03";
-}
+} // (hardware pkgs)
