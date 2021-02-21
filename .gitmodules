@@ -1,0 +1,6 @@
+[submodule "purgatory/myStNix"]
+	path = purgatory/myStNix
+	url = https://github.com/samalws/myStNix
+[submodule "purgatory/myDwmNix"]
+	path = purgatory/myDwmNix
+	url = https://github.com/samalws/myDwmNix
