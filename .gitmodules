@@ -4,3 +4,6 @@
 [submodule "purgatory/myDwmNix"]
 	path = purgatory/myDwmNix
 	url = https://github.com/samalws/myDwmNix
+[submodule "heaven/projects/ush"]
+	path = heaven/projects/ush
+	url = https://github.com/samalws/ush
