@@ -4,6 +4,7 @@
 let
  mySt  = import ./myStNix/st.nix;
  myDwm = import ./myDwmNix/dwm.nix;
+ ush = import ../heaven/projects/ush/package.nix;
  hardware = import ./nonAutoHardwareConfig.nix;
 in {
   networking = {
@@ -76,6 +77,7 @@ in {
     vim
     mySt
     myDwm
+    ush
   ];
 
   fonts.fonts = with pkgs; [
