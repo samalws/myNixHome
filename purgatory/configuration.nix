@@ -9,9 +9,12 @@ let
 in {
   networking = {
     hostName = "nixos-uwe";
-    networkmanager.enable = true;
     firewall.enable = false;
-    wireless.userControlled.enable = true;
+    wireless = {
+      enable = true;
+      userControlled.enable = true;
+      networks = import ./networks.nix;
+    };
   };
 
   time.timeZone = "America/Chicago";
@@ -40,7 +43,7 @@ in {
 
   nixpkgs.config.allowUnfree = true;
 
-  # services.openvpn.servers.privatvpn.config = '' config /etc/openvpn/privatvpn.conf  '';
+  services.openvpn.servers.privatevpn.config = " config /home/uwe/purgatory/privatevpn/UDP/PrivateVPN-SE-Stockholm-TUN-1194.ovpn  ";
 
   virtualisation.virtualbox = {
     host = {
