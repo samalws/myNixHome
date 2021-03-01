@@ -81,6 +81,7 @@ in {
     mySt
     myDwm
     ush
+    lxqt.screengrab
   ];
 
   fonts.fonts = with pkgs; [
