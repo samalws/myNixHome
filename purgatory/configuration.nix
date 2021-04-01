@@ -43,14 +43,14 @@ in {
 
   nixpkgs.config.allowUnfree = true;
 
-  services.openvpn.servers.privatevpn.config = " config /home/uwe/purgatory/privatevpn/UDP/PrivateVPN-SE-Stockholm-TUN-1194.ovpn  ";
+  #services.openvpn.servers.privatevpn.config = " config /home/uwe/purgatory/privatevpn/UDP/PrivateVPN-SE-Stockholm-TUN-1194.ovpn  ";
 
-  virtualisation.virtualbox = {
-    host = {
-      enable = true;
-      enableExtensionPack = true;
-    };
-  };
+  #virtualisation.virtualbox = {
+  #  host = {
+  #    enable = true;
+  #    enableExtensionPack = true;
+  #  };
+  #};
 
   programs.slock.enable = true;
   programs.light.enable = true;
@@ -60,6 +60,7 @@ in {
   environment.systemPackages = with pkgs; [
     ed
     firefox
+    brave
     dmenu
     surf
     zoom-us
@@ -82,6 +83,14 @@ in {
     myDwm
     ush
     lxqt.screengrab
+    coq
+    gimp
+    #vscode
+    neomutt
+    zip
+    unzip
+    youtube-dl
+    wireshark
   ];
 
   fonts.fonts = with pkgs; [
