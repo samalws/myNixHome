@@ -91,6 +91,11 @@ in {
     unzip
     youtube-dl
     wireshark
+    bind
+    discord
+    inetutils
+    thunderbird
+    pavucontrol
   ];
 
   fonts.fonts = with pkgs; [

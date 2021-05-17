@@ -1,0 +1,6 @@
+set folder = "imaps://uwe@samuwe.com@samuwe.com:993"
+set smtp_url = "smtp://uwe@samuwe.com@samuwe.com:587"
+
+set from = "uwe@samuwe.com"
+
+source "~/.config/mutt/common_samuwe"
