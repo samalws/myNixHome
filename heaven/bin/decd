@@ -1,0 +1,5 @@
+gpg -o $1.zip -d $1.zip.gpg
+unzip $1.zip
+echo "remove zip (^C to leave)"
+read
+rm $1.zip

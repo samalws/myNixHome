@@ -1,0 +1,15 @@
+set folder = "imaps://sam.alws@gmail.com@imap.gmail.com:993"
+set smtp_url = "smtps://sam.alws@gmail.com@smtp.gmail.com:465"
+set from = "sam.alws@gmail.com"
+
+set realname = "Sam Alws"
+
+set spoolfile = "+INBOX"
+set record = "+[Gmail]/Sent Mail"
+set trash = "+[Gmail]/Trash"
+set postponed = "+[Gmail]/Drafts"
+
+unmailboxes *
+mailboxes =INBOX =[Gmail]/Sent\ Mail =[Gmail]/Drafts =[Gmail]/Spam =[Gmail]/Trash
+
+source "~/.config/mutt/common"

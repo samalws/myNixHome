@@ -1,0 +1,5 @@
+decf $1.pdf
+mupdf $1.pdf
+echo "removing pdf (^C to leave)"
+read
+rm $1.pdf

@@ -5,6 +5,7 @@ set record = "+Sent"
 set trash = "+Trash"
 set postponed = "+Drafts"
 
+unmailboxes *
 mailboxes =INBOX =Sent =Trash =Drafts
 
 source "~/.config/mutt/common"

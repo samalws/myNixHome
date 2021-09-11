@@ -1,0 +1,8 @@
+zip -r $1 $1
+gpg -r sam.alws@gmail.com -e $1.zip
+echo "remove zip (^C to leave)"
+read
+rm $1.zip
+echo "remove dir (^C to leave)"
+read
+rm -r $1

@@ -1,5 +1,5 @@
 set folder = "imaps://sam@samalws.com@samuwe.com:993"
-set smtp_url = "smtp://sam@samalws.com@samuwe.com:587"
+set smtp_url = "smtps://sam@samalws.com@samuwe.com:465"
 
 set from = "sam@samalws.com"
 

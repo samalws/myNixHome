@@ -6,18 +6,21 @@ let
  myDwm = import ./myDwmNix/dwm.nix;
  ush = import ../heaven/projects/ush/package.nix;
  hardware = import ./nonAutoHardwareConfig.nix;
+ androidSdk = pkgs.androidenv.androidPkgs_9_0.androidsdk;
 in {
   networking = {
     hostName = "nixos-uwe";
     firewall.enable = false;
+    networkmanager.enable = true;
     wireless = {
       enable = true;
       userControlled.enable = true;
       networks = import ./networks.nix;
+      interfaces = [ "wlp2s0" ];
     };
   };
 
-  time.timeZone = "America/Chicago";
+  time.timeZone = "America/New_York";
 
   services = {
     printing.enable = true;
@@ -85,7 +88,6 @@ in {
     lxqt.screengrab
     coq
     gimp
-    #vscode
     neomutt
     zip
     unzip
@@ -96,6 +98,7 @@ in {
     inetutils
     thunderbird
     pavucontrol
+    dragon-drop
   ];
 
   fonts.fonts = with pkgs; [

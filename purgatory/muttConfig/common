@@ -1,3 +1,5 @@
 set editor = vim
 
+set header_cache = ~/.muttcache
+
 color normal default default
