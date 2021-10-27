@@ -1,3 +1,4 @@
 # redshift -O 3000K
 feh --bg-scale /home/uwe/purgatory/desktopBackground.jpg
 brave &
+check-battery &

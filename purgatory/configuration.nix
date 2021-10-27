@@ -4,14 +4,12 @@
 let
  mySt  = import ./myStNix/st.nix;
  myDwm = import ./myDwmNix/dwm.nix;
- ush = import ../heaven/projects/ush/package.nix;
  hardware = import ./nonAutoHardwareConfig.nix;
  androidSdk = pkgs.androidenv.androidPkgs_9_0.androidsdk;
 in {
   networking = {
     hostName = "nixos-uwe";
     firewall.enable = false;
-    networkmanager.enable = true;
     wireless = {
       enable = true;
       userControlled.enable = true;
@@ -26,12 +24,13 @@ in {
     printing.enable = true;
     xserver = {
       enable = true;
-      layout = "us,de,ru";
+      layout = "us,de,il"; # , ru
       xkbOptions = "grp:caps_toggle";
       libinput.enable = true;
       desktopManager.xterm.enable = false;
       displayManager.startx.enable = true;
     };
+    acpid.enable = true;
   };
 
   sound.enable = true;
@@ -84,7 +83,6 @@ in {
     vim
     mySt
     myDwm
-    ush
     lxqt.screengrab
     coq
     gimp
@@ -99,6 +97,9 @@ in {
     thunderbird
     pavucontrol
     dragon-drop
+    wpa_supplicant_gui
+    direnv
+    acpid
   ];
 
   fonts.fonts = with pkgs; [

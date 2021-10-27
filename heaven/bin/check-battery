@@ -1,0 +1,9 @@
+while :
+do
+  if [ "$(upower --dump | grep percentage | sed 's/[^0-9]//g' | head -1)" -lt "10" ]
+  then
+    echo -e "ok thanks\nshut up lol" | dmenu -p "ur battery is low loser"
+    break
+  fi
+  sleep 20
+done
