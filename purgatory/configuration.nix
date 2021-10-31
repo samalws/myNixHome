@@ -47,10 +47,21 @@ in {
     package = pkgs.nixUnstable;
     extraOptions = ''
       experimental-features = nix-command flakes
+      keep-outputs = true
+      keep-derivations = true
     '';
   };
 
+  nixpkgs.config.allowUnfree = true;
+  virtualisation.virtualbox = {
+    host = {
+      enable = true;
+      enableExtensionPack = true;
+    };
+  };
+
   programs.slock.enable = true;
+  programs.light.enable = true;
   services.upower.enable = true;
   # programs.gnupg.agent.enable = true;
 
